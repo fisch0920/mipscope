@@ -1,0 +1,130 @@
+SPIM and MipScope handle immediate arguments greater than 2147483647 differently. MipScope treats these as unsigned integers, and loads them. It's not clear what exactly SPIM is doing, but it doesn't error, and the values aren't right.
+
+##############
+# Arithmetic & Logical
+##############
+INSTRUCTION	IMPLEMENTED?	TESTED?		NOTES
+abs		YES		YES		
+add		YES		YES
+addu		YES		YES
+addi		YES		YES		We accept any immmediate - SPIM only takes -32k - 32k
+addiu		YES		YES		ditto
+and		YES		YES
+andi		YES		YES		We accept any immediate - SPIM only takes 0 - 64k
+clo		YES		YES
+clz		YES		YES
+div 3-arg	YES		YES
+divu 3-arg	YES		YES
+div 2-arg	YES		YES
+divu 2-arg	YES		YES
+mult		YES		YES
+multu		YES		YES
+mul		YES		YES
+mulo		YES		YES
+mulou		YES		YES
+madd		YES		YES
+maddu		YES		YES
+msub		NO		NO		SPIM bug
+msubu		NO		NO		SPIM bug
+neg		YES		YES
+negu		YES		YES		
+nor		YES		YES
+or		YES		YES
+ori		YES		YES
+rem		YES		YES
+remu		YES		YES
+sll		YES		YES
+sllv		YES		YES
+sra		YES		YES
+srav		YES		YES
+srl		YES		YES
+srlv		YES		YES
+rol		YES		YES
+ror		YES		YES
+sub		YES		YES
+subu		YES		YES
+xor		YES		YES
+xori		YES		YES
+
+
+#########
+# Comparison
+#########
+slt		YES		YES
+sltu		YES		YES
+slti		YES		YES
+sltiu		YES		YES
+seq		YES		YES
+sge		YES		YES
+sgeu		YES		YES
+sgt		YES		YES
+sgtu		YES		YES
+sle		YES		YES
+sleu		YES		YES
+sne		YES		YES
+
+
+#########
+# Branch
+#########
+b		YES
+beq		YES
+bgez		YES
+bgezal		YES
+bgtz		YES
+blez		YES
+bltzal		YES
+bltz		YES
+bne		YES
+beqz		YES
+bge		YES
+bgeu		YES
+bgt		YES
+bgtu		YES
+ble		YES
+bleu		YES
+blt		YES
+bltu		YES
+bnez		YES
+j		YES
+jal		YES
+jalr		YES
+jr		YES
+
+
+
+
+##########
+# Data Transfer
+##########
+
+lui		YES		YES		spim only takes 0..65k, we allow any immediate		
+li		YES		YES
+la		YES		whatever
+lb		YES		YES (possible bug with minus sign relative, see line 5174)
+lbu		YES		YES
+lh		YES		YES
+lhu		YES		YES
+lw		YES		YES
+lwl		YES		SPIM (almost certainly) or MipsCope has an obscure bug -- with li $a0, CONSTANT before, all is well
+lwr		YES		ditto
+ld		YES		YES
+ulh		YES		YES
+ulhu		YES		YES
+ulw		YES		YES
+sb		YES		YES
+sh		YES		YES
+sw		YES		YES
+swl		YES		YES
+swr		YES		YES
+sd		YES		YES
+ush		YES		YES		mildly questionable -- several in order seem to fuck up SPIM
+usw		YES		YES		ditto
+move		YES		ASSUMED
+mfhi		YES		ASSUMED
+mflo		YES		ASSUMED
+mthi		YES		ASSUMED
+mtlo		YES		ASSUMED
+movn		YES		YES
+movz		YES		YES
+

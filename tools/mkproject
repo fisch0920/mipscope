@@ -1,0 +1,10 @@
+#!/bin/sh -e
+
+QMAKE=`which qmake-qt4 2>/dev/null` || QMAKE=`which qmake`
+PRO_FILE=mipscope.pro
+
+$QMAKE -project -o $PRO_FILE
+cat >> $PRO_FILE <<-!
+OBJECTS_DIR = obj
+MOC_DIR     = obj
+!

@@ -1,0 +1,38 @@
+
+Gui TODO: (stuff i'll forget, otherwise)
+   * Optimize editing-on-the-fly algorithmically; reduce number of linear for loops
+   * Cleanup last-minute Syscall architechure
+//   * Memory watchpoints; selection & setting of multiple
+//   * Integrate Maze into MipScope
+   * Lots of testing :)
+//   * Have pc in regView be accurate address
+//   * Options dialog
+   * documentation in-program
+//   * Recently-used files list;  use Qt demo
+   * Fix multiple-programs running concurrently
+   * Allow implicit rollBack to be toggled on/off
+//   * In-Doc MIPS Reference
+//   * Exceptions pause; don't break; added read-only memory protection
+
+
+
+
+OLD:
+   * Line numbers, breakpoints correction,
+   * Add 'Find and/or Replace' Dialog
+   * Better view of errors
+   * Make MemoryView!
+         Use dynamically-updating pBuffers for texture; get 2d texture-version working correctly first
+
+   * Fix Restarting very fast and then segfault
+
+
+
+   * DELAYED parsing!!!
+DELAYED Parsing Ideas:
+   * Main thing is updating of syntaxErrors; ErrorConsole
+      * fix multiple calls to contentsChanged (inserting whitespace on Return press)
+
+   * Know whether last errors were syntactic or semantic; attempt to use that intelligently
+      * Attempt to only re-add parseNodes if non-trivial changes were made
+

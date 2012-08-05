@@ -1,0 +1,9 @@
+/Makefile
+/Makefile.*
+/mipscope
+/obj
+/qrc_*.cpp
+/release
+/debug
+*~
+.DS_Store
