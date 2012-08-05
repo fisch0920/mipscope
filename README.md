@@ -12,6 +12,8 @@ MipScope is a cross-platform IDE for students learning assembly on the MIPS arch
 
 http://mipscope.cs.brown.edu
 
+<img src="http://mipscope.cs.brown.edu/screenshot-small.png" />
+
 License
 
 MipScope is free and open source software, licensed under the terms of the GNU General Public License v2. MipScope comes with NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
